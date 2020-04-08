@@ -1,0 +1,14 @@
+.bordabotao{
+    border-color: #b7b7b7;
+}
+.borda{
+    border: 1px solid #dadada;
+}
+.btn-outline-dark:hover {
+    color: #747582;
+    background-color: #d6d6d6;
+    border-color: #ffffff;
+}
+.btn:focus, outline-dark:focus {
+    box-shadow: none;
+}
