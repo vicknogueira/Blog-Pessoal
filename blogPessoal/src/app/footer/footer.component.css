@@ -1,0 +1,24 @@
+footer{
+    width: 100%;
+    padding: 10px;
+}
+ul.social-network{
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+div.footer-copyright{
+    background-color: #797979;
+}
+.faFacebook, .faLinkedin, .faInstagram{
+    color: white;
+}
+.faFacebook:hover{
+    color: #2a5297;
+}
+.faInstagram:hover{
+    color: #bd3cbf;
+}
+.faLinkedin:hover{
+    color: #0077b5;
+}
