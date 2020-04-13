@@ -2,9 +2,19 @@
     border-color: #b7b7b7;
     border-left: 0;
 }
+.bordabotaoHome:focus-within{
+    color: #fff;
+    background-color: #343a40;
+    border-color: #343a40;
+}
 .bordabotaoFeed{
     border-color: #b7b7b7;
     border-right: 0;
+}
+.bordabotaoFeed:focus-within{
+    color: #fff;
+    background-color: #343a40;
+    border-color: #343a40;
 }
 .borda{
     border: 1px solid #dadada;
