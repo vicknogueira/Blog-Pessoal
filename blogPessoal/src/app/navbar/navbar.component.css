@@ -1,5 +1,10 @@
-.bordabotao{
+.bordabotaoHome{
     border-color: #b7b7b7;
+    border-left: 0;
+}
+.bordabotaoFeed{
+    border-color: #b7b7b7;
+    border-right: 0;
 }
 .borda{
     border: 1px solid #dadada;
@@ -11,4 +16,8 @@
 }
 .btn:focus, outline-dark:focus {
     box-shadow: none;
+}
+
+.navbar-Bg{
+    background-color: #eceff1;
 }

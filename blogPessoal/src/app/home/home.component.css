@@ -1,0 +1,8 @@
+.parallax{
+    background-image: url('../../assets/img/floresta.jpg');
+    min-height: 500px; /*minimo de altura */
+    background-attachment: fixed; /* Isso faz com que essa imagem fique fixa no background */
+    background-position: center; /* A imagem fica no centro */
+    background-repeat: no-repeat; /* para não repetir */
+    background-size: cover; /* Para não repetir */
+}
