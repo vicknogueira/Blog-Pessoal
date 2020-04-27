@@ -10,9 +10,9 @@ export class PostagemService { //Será nessa classe que trabalharemos iremos con
 
   /*CRUD – Create, Ready, Update and Delete */
 
-  // o nome dess método é aleatório poderia ser qualquer coisa, mas por padrão colocamos isso
+  // o nome desse método é aleatório poderia ser qualquer coisa, mas por padrão colocamos isso
   getAllPostagens(){ // para trazer todas as postagens que existem no meu servidor  
-    return this.http.get('http://31.220.57.14:8080/postagem');
+    return this.http.get('http://31.220.57.14:8080/postagens');
 
   }
 }
