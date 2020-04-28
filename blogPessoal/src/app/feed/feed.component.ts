@@ -9,6 +9,10 @@ import { Postagem } from '../model/Postagem';
 })
 export class FeedComponent implements OnInit { // tudo que estiver dentro da class é a minha lógica
 
+  key = 'data'
+  reverse = true
+
+
   // Criamos uma variável listaPostagem que recebe o objeto Postagem, como eu quero varias postagens eu coloco um Array de objetos []
   listaPostagens: Postagem[]
   postagem: Postagem = new Postagem
@@ -33,6 +37,5 @@ export class FeedComponent implements OnInit { // tudo que estiver dentro da cla
       location.assign('/feed') // com isso ele vaia tualizar automaticamente
     })
   }
-
 
 }
