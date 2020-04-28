@@ -11,6 +11,7 @@ export class FeedComponent implements OnInit { // tudo que estiver dentro da cla
 
   // Criamos uma variável listaPostagem que recebe o objeto Postagem, como eu quero varias postagens eu coloco um Array de objetos []
   listaPostagens: Postagem[]
+  postagem: Postagem = new Postagem
 
   // Tudo que estiver dentro de construtor é uma injeção de dependência
   constructor(private postagemService: PostagemService) { }
@@ -25,4 +26,13 @@ export class FeedComponent implements OnInit { // tudo que estiver dentro da cla
       this.listaPostagens = resp
     })  
   }
+
+  publicar(){
+    this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) =>{
+      this.postagem = resp;
+      location.assign('/feed') // com isso ele vaia tualizar automaticamente
+    })
+  }
+
+
 }
