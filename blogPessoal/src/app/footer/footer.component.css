@@ -7,11 +7,11 @@ ul.social-network{
     list-style: none;
     padding-left: 0;
 }
-div.footer-copyright{
-    background-color: #797979;
+.footer-bg{
+    background-color: #2d2828;
 }
 .faFacebook, .faLinkedin, .faInstagram{
-    color: white;
+    color: #7b7676;
 }
 .faFacebook:hover{
     color: #2a5297;
