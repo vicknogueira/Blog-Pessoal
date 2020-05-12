@@ -1,0 +1,67 @@
+<main class="container">
+    <section class="row mt-5 mb-5">
+        <aside class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <!-- w-75 (width: 75%) mx-auto (Centraliza o elemento)-->
+                <div class="d-flex justify-content-center">
+                    <img class="card-img-top rounded-circle w-75 mx-auto" src="../../assets/img/perfil-vazio.jpg"
+                        alt="Imagem de capa do blog">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-center font-weight-normal">Vitória Nogueira</h5>
+                    <p class="card-text text-center font-weight-light">Estudante Desenvolvedor Java Junior na Generation
+                    </p>
+                    <!-- d-flex (display: flex) -->
+                    <a href="https://www.linkedin.com/in/vitoria-nogueira-vn/"
+                        class="btn btn-info col-12 d-flex justify-content-center align-items-center mt-3"
+                        target="_blank">Linkedin</a>
+                    <a href="https://github.com/vicknogueira"
+                        class="btn btn-outline-dark col-12 d-flex justify-content-center align-items-center mt-3"
+                        target="_blank">GitHub</a>
+
+                    
+                </div>
+            </div>
+        </aside>
+        <section class="col-md-8">
+
+            <div>
+                <h3 class="text-center mb-4 text-monospace">Deletar postagem</h3>
+
+    
+                <div class="card mb-4" >
+
+                    <div class="card-header">
+                                <h5 class="card-title">{{ postagem.titulo }}</h5>
+                    </div>
+                   
+
+                    <div class="card-body">
+                        <p class="card-text">{{ postagem.texto }}</p>
+                        <small class="form-text m-0 text-muted mb-3 text-monospace">
+                           Postado em {{ postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date: 'HH:mm'}}
+                        </small>
+                        
+                        
+                    </div>
+
+                </div>
+                <hr class="mt-5 mb-5">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <h5 class="text-center font-monspace mb-5">Tem certeza que deseja apagar esta postagem?</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-outline-success" (click)="btnSim()">Sim</button>
+                        <button class="btn btn-outline-danger" (click)="btnNão()">Não</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </section>
+
+</main>

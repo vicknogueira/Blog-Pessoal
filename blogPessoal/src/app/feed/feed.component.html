@@ -59,6 +59,13 @@
     
                 <h3 class="text-center text-monospace mb-5">Minhas postagens</h3>
     
+                <div *ngIf = 'alerta'>
+                    <div class="alert alert-success" role="alert">
+                        Postagem deletada com sucesso !
+                    </div>
+                </div>
+                
+
                 <div class="card mb-4" *ngFor="let postagem of listaPostagens | orderBy : key : reverse">
 
                     <div class="card-header">
@@ -68,6 +75,7 @@
                             </div>
                             <div class="col-md-4 d-flex justify-content-end">
                                 <button class="btn btn-outline-info" [routerLink]="['/editar', postagem.id]">Editar</button>
+                                <button class="btn btn-outline-danger mr-3" [routerLink]="['/deletar', postagem.id]">Apagar</button>
                             </div>
                         </div>
                     </div>

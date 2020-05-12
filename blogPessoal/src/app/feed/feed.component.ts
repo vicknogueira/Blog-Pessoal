@@ -16,6 +16,7 @@ export class FeedComponent implements OnInit { // tudo que estiver dentro da cla
   // Criamos uma variável listaPostagem que recebe o objeto Postagem, como eu quero varias postagens eu coloco um Array de objetos []
   listaPostagens: Postagem[]
   postagem: Postagem = new Postagem
+  alerta:boolean = false
 
   // Tudo que estiver dentro de construtor é uma injeção de dependência
   constructor(private postagemService: PostagemService) { }
@@ -23,8 +24,18 @@ export class FeedComponent implements OnInit { // tudo que estiver dentro da cla
   // tudo que estiver dentro do método ngOnInit é aquilo que vais ser carregado quando eu abrir a aplicação
   ngOnInit(){
     this.findallPostagens()
-
+    let item:string = localStorage.getItem('delOk')
     window.scroll(0,0)// isso fará com que ao clicar em um botão que direcione ao outra página ele carregue e fique no começo dela
+  
+    if(item == "true"){
+      this.alerta = true
+      localStorage.clear()
+
+      setTimeout(()=>{
+        location.assign('/feed')
+      }, 3000)
+     
+    }
   }
 
   findallPostagens(){
