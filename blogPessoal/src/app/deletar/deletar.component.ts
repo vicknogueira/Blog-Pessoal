@@ -32,12 +32,12 @@ export class DeletarComponent implements OnInit {
   btnSim(){
     this.postagemService.deletePostagem(this.postagem.id).subscribe(()=>{
       this.delOk = true
-      this.router.navigate(['/loja'])
+      this.router.navigate(['/feed'])
       localStorage.setItem("delOk", this.delOk.toString())
     })
   }
   btnNao(){
-    this.router.navigate(['/loja'])
+    this.router.navigate(['/feed'])
   }
 
 }

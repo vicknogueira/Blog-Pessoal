@@ -17,6 +17,7 @@ export class FeedComponent implements OnInit { // tudo que estiver dentro da cla
   listaPostagens: Postagem[]
   postagem: Postagem = new Postagem
   alerta:boolean = false
+  titulo:string
 
   // Tudo que estiver dentro de construtor é uma injeção de dependência
   constructor(private postagemService: PostagemService) { }
@@ -51,6 +52,10 @@ export class FeedComponent implements OnInit { // tudo que estiver dentro da cla
     })
   }
 
-
+  pesquisarPorTitulo(){
+      this.postagemService.findByTitulo(this.titulo).subscribe((resp: Postagem[])=>{
+        this.listaPostagens = resp
+      })
+  }
 
 }
