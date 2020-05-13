@@ -23,10 +23,11 @@
 
                     <h6 class="mb-3 text-monospace text-center">Pesquisar por título</h6>
 
-                    <input type="text" class="form-control mb-3 w-100 border-bottom"
-                        placeholder="Pesquisar postagem..." [(ngModel)]="titulo">
+                    <input type="text" class="form-control mb-3 w-100 border-bottom" placeholder="Pesquisar postagem..."
+                        [(ngModel)]="titulo">
 
-                    <button class="btn btn-outline-warning w-100" type="button" (click)="pesquisarPorTitulo()">Pesquisar</button>
+                    <button class="btn btn-outline-warning w-100" type="button"
+                        (click)="pesquisarPorTitulo()">Pesquisar</button>
 
                 </div>
             </div>
@@ -40,57 +41,66 @@
                     <!-- form do estilo bootstrap não do html-->
                     <label for="titulo" class="text-monospace">Titulo</label>
                     <input type="text" placeholder="Digite seu titulo..." name="titulo" id="titulo"
-                        class="form-control border" [(ngModel)] = "postagem.titulo" minlength="4">
+                        class="form-control border" [(ngModel)]="postagem.titulo" minlength="4">
                 </div>
-    
+
                 <div class="form-group">
                     <!-- é preciso ter um form-group para cada grupo de input-->
                     <label for="texto">Texto:</label>
                     <textarea name="texto" id="texto" placeholder="Digite seu texto..." cols="30" rows="4"
                         class="form-control border" [(ngModel)]="postagem.texto" minlength="4"></textarea>
                 </div>
-    
+
                 <div class="d-flex justify-content-end">
                     <button type="button" class="btn btn-outline-info w-25" (click)="publicar()">Publicar</button>
                 </div>
-    
-    
+
                 <hr class="mt-5 mb-5">
-    
-                <h3 class="text-center text-monospace mb-5">Minhas postagens</h3>
-    
-                <div *ngIf = 'alerta'>
-                    <div class="alert alert-success" role="alert">
-                        Postagem deletada com sucesso !
-                    </div>
-                </div>
-                
 
-                <div class="card mb-4" *ngFor="let postagem of listaPostagens | orderBy : key : reverse">
+                <div *ngIf='pesquisa; else listaPadrao'>
+                    <h3 class="text-center text-monospace mb-5">Minhas postagens</h3>
 
-                    <div class="card-header">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <h5 class="card-title">{{ postagem.titulo }}</h5>
-                            </div>
-                            <div class="col-md-4 d-flex justify-content-end">
-                                <button class="btn btn-outline-info mr-3" [routerLink]="['/editar', postagem.id]">Editar</button>
-                                <button class="btn btn-outline-danger " [routerLink]="['/deletar', postagem.id]">Apagar</button>
-                            </div>
+                    <div *ngIf='alerta'>
+                        <div class="alert alert-success" role="alert">
+                            Postagem deletada com sucesso !
                         </div>
                     </div>
-                   
 
-                    <div class="card-body">
-                        <p class="card-text">{{ postagem.texto }}</p>
-                        <small class="form-text m-0 text-muted mb-3 text-monospace">
-                           Postado em {{ postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date: 'HH:mm'}}
-                        </small>
-                        
-                        
+
+                    <div class="card mb-4" *ngFor="let postagem of listaPostagens | orderBy : key : reverse">
+
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h5 class="card-title">{{ postagem.titulo }}</h5>
+                                </div>
+                                <div class="col-md-4 d-flex justify-content-end">
+                                    <button class="btn btn-outline-info mr-3"
+                                        [routerLink]="['/editar', postagem.id]">Editar</button>
+                                    <button class="btn btn-outline-danger "
+                                        [routerLink]="['/deletar', postagem.id]">Apagar</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="card-body">
+                            <p class="card-text">{{ postagem.texto }}</p>
+                            <small class="form-text m-0 text-muted mb-3 text-monospace">
+                                Postado em {{ postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date: 'HH:mm'}}
+                            </small>
+
+
+                        </div>
+
                     </div>
-
                 </div>
+
+                <ng-template #listaPadrao>
+                    <app-lista-post></app-lista-post>
+                </ng-template>
+
+                
             </div>
 
         </section>

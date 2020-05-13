@@ -4,6 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { FeedComponent } from './feed/feed.component';
 import { EditarComponent } from './editar/editar.component';
 import { DeletarComponent } from './deletar/deletar.component';
+import { ListaPostComponent } from './lista-post/lista-post.component';
+
 
 
 const routes: Routes = [ // { } -> é objeto
@@ -13,6 +15,7 @@ const routes: Routes = [ // { } -> é objeto
   {path: 'editar/:id', component:EditarComponent},
   {path:'deletar', component:DeletarComponent},
   {path:'deletar/:id', component:DeletarComponent},
+  {path:'lista-post', component:ListaPostComponent}
 ];
 
 @NgModule({

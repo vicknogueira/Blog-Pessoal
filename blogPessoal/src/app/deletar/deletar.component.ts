@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PostagemService } from '../service/postagem.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Postagem } from '../model/Postagem';
+import { PostagemService } from '../service/postagem.service';
 
 @Component({
   selector: 'app-deletar',
